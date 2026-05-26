@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closer — Voice notes for your inner circle</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #FAF4E8;
+      color: #1A1F36;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: #FF6B6B;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 4rem 0 3.5rem;
+    }
+
+    .hero__logo {
+      font-size: clamp(2.5rem, 8vw, 3.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #1A1F36;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero__tagline {
+      font-size: clamp(1.125rem, 3vw, 1.375rem);
+      color: #1A1F36;
+      opacity: 0.85;
+      max-width: 28rem;
+      margin: 0 auto 2rem;
+      font-weight: 400;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #FF6B6B;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.875rem 2rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+      box-shadow: 0 4px 14px rgba(255, 107, 107, 0.35);
+    }
+
+    .btn:hover {
+      background-color: #e85a5a;
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* Features */
+    .features {
+      padding: 2rem 0 4rem;
+    }
+
+    .features__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .features__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 1rem;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(26, 31, 54, 0.06);
+      box-shadow: 0 2px 12px rgba(26, 31, 54, 0.04);
+    }
+
+    .feature-card__icon {
+      font-size: 2.25rem;
+      margin-bottom: 0.75rem;
+      line-height: 1;
+    }
+
+    .feature-card__title {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1A1F36;
+    }
+
+    .feature-card__desc {
+      font-size: 0.9375rem;
+      color: #1A1F36;
+      opacity: 0.75;
+      line-height: 1.5;
+    }
+
+    /* Waitlist */
+    .waitlist {
+      padding: 3rem 0 5rem;
+      text-align: center;
+      border-top: 1px solid rgba(26, 31, 54, 0.08);
+    }
+
+    .waitlist__heading {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .waitlist__sub {
+      font-size: 0.9375rem;
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .waitlist__form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      max-width: 28rem;
+      margin: 0 auto;
+    }
+
+    .waitlist__input {
+      flex: 1 1 12rem;
+      min-width: 0;
+      padding: 0.875rem 1.25rem;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 1px solid rgba(26, 31, 54, 0.15);
+      border-radius: 999px;
+      background: #fff;
+      color: #1A1F36;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .waitlist__input::placeholder {
+      color: rgba(26, 31, 54, 0.4);
+    }
+
+    .waitlist__input:focus {
+      border-color: #FF6B6B;
+      box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+    }
+
+    .waitlist__submit {
+      flex: 0 0 auto;
+    }
+
+    footer {
+      text-align: center;
+      padding-bottom: 2rem;
+      font-size: 0.8125rem;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero container">
+      <h1 class="hero__logo">Closer</h1>
+      <p class="hero__tagline">Voice notes for your inner circle</p>
+      <a href="#waitlist" class="btn">Join the waitlist</a>
+    </section>
+
+    <section class="features container" aria-label="Features">
+      <div class="features__grid">
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🎙️</div>
+          <h2 class="feature-card__title">Audio only</h2>
+          <p class="feature-card__desc">No curated selfies — just your voice, raw and real.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">💛</div>
+          <h2 class="feature-card__title">Inner circle only</h2>
+          <p class="feature-card__desc">Max 12 close friends — the people who actually matter.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">⏳</div>
+          <h2 class="feature-card__title">Disappears in 24h</h2>
+          <p class="feature-card__desc">No permanent feed — moments that fade like they should.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="waitlist" class="waitlist container">
+      <h2 class="waitlist__heading">Get early access</h2>
+      <p class="waitlist__sub">Be the first to try Closer when we launch.</p>
+      <form class="waitlist__form" id="waitlist-form" novalidate>
+        <input
+          type="email"
+          name="email"
+          class="waitlist__input"
+          placeholder="you@example.com"
+          required
+          autocomplete="email"
+          aria-label="Email address"
+        >
+        <button type="submit" class="btn waitlist__submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>© Closer</p>
+  </footer>
+
+  <script>
+    document.getElementById('waitlist-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("Thanks! We'll be in touch.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
